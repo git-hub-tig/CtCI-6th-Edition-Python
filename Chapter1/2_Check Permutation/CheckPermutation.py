@@ -7,6 +7,7 @@ def check_permutation(str1, str2):
     if len(str1) != len(str2):
         return False
     counter = Counter()
+    # special dict
     for c in str1:
         counter[c] += 1
     for c in str2:
@@ -33,6 +34,7 @@ class Test(unittest.TestCase):
         for test_strings in self.dataT:
             result = check_permutation(*test_strings)
             self.assertTrue(result)
+            # result or actual
         # false check
         for test_strings in self.dataF:
             result = check_permutation(*test_strings)

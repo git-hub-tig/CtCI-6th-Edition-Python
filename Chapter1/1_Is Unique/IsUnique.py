@@ -2,7 +2,7 @@
 import unittest
 
 
-def unique(string):
+def unique2(string):
     # Assuming character set is ASCII (128 characters)
     if len(string) > 128:
         return False
@@ -16,7 +16,13 @@ def unique(string):
         char_set[val] = True
 
     return True
-
+from collections import Counter
+def unique(string):
+    if len(string) > 128:
+        return False
+    dictt=Counter(string) # list index out of range is blank
+    return False if string and dictt.most_common(1)[0][1]>1 else True
+# most_common return list(tuple,,)
 
 class Test(unittest.TestCase):
     dataT = [('abcd'), ('s4fad'), ('')]

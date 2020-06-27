@@ -7,6 +7,7 @@ def urlify(string, length):
     new_index = len(string)
 
     for i in reversed(range(length)):
+        # right -> left
         if string[i] == ' ':
             # Replace spaces
             string[new_index - 3:new_index] = '%20'
@@ -26,11 +27,13 @@ class Test(unittest.TestCase):
         (list('much ado about nothing      '), 22,
          list('much%20ado%20about%20nothing')),
         (list('Mr John Smith    '), 13, list('Mr%20John%20Smith'))]
+    # special reverve space ahead first for string.
+    # length is real compact string len.
 
     def test_urlify(self):
         for [test_string, length, expected] in self.data:
             actual = urlify(test_string, length)
             self.assertEqual(actual, expected)
-
+            # not use assertTrue or False
 if __name__ == "__main__":
     unittest.main()

@@ -1,3 +1,5 @@
+#   http://docs.python.org/library/unittest.html  
+# https://github.com/alexhagiopol/cracking-the-coding-interview/blob/3866868c9a336c87602b8e722d0be01b111f757b/python_solutions/chapter_01_arrays_and_strings/problem_01_04_palindrome_permutation.py
 # O(N)
 import unittest
 
@@ -24,6 +26,7 @@ def char_number(c):
     Z = ord('Z')
     val = ord(c)
 
+    # capital and lower case letters are same .
     if a <= val <= z:
         return val - a
     elif A <= val <= Z:
