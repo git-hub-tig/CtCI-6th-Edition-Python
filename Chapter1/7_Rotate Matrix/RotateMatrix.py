@@ -5,15 +5,20 @@ import unittest
 def rotate_matrix(matrix):
     '''rotates a matrix 90 degrees clockwise'''
     n = len(matrix)
+    # in-place swap, of course can set the lower left as 0.0 origin
     for layer in range(n // 2):
+        # wqs layer just the class from the outer-> inner, 
+        # so just //2 class.
+        # left , top just lower left corner/ bottom, upper left. 
         first, last = layer, n - layer - 1
+        # keep the middle row 
         for i in range(first, last):
             # save top
             top = matrix[layer][i]
 
             # left -> top
             matrix[layer][i] = matrix[-i - 1][layer]
-
+            # swap just the former's row is the latter's column
             # bottom -> left
             matrix[-i - 1][layer] = matrix[-layer - 1][-i - 1]
 
