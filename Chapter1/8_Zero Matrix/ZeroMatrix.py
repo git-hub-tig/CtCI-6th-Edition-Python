@@ -7,7 +7,6 @@ def zero_matrix(matrix):
     n = len(matrix[0])
     rows = []
     cols = []
-
     for x in range(m):
         for y in range(n):
             if matrix[x][y] == 0:
@@ -16,6 +15,8 @@ def zero_matrix(matrix):
 
     for row in rows:
         nullify_row(matrix, row)
+        # specify the parameter, row
+        # also can let the matrix global var.
 
     for col in cols:
         nullify_col(matrix, col)

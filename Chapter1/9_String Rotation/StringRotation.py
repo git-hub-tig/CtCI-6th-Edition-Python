@@ -8,6 +8,7 @@ def is_substring(string, sub):
 
 def string_rotation(s1, s2):
     if len(s1) == len(s2) != 0:
+        # can contract
         return is_substring(s1 + s1, s2)
     return False
 
